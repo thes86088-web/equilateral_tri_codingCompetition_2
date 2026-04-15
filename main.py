@@ -29,15 +29,16 @@ def belongsToPerimeter(row, col, n) :
 
 def condition( row, col, n ) :
     
+    case = 0
+    
     if( belongsToFinal(row, col, n) ) :
-        return 3
-    elif( belongsToInner(row, col, n) ) :
-        return 2
-    elif (belongsToPerimeter(row, col, n) ) :
-        return 1
-    else :
-        return 0
-
+        case = 3
+    if( belongsToInner(row, col, n) ) :
+        case =  2
+    if (belongsToPerimeter(row, col, n) ) :
+        case =  1
+    
+    return case
     
 def createCanvas( checkCondition, n ) :
     
